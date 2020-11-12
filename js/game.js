@@ -1,24 +1,32 @@
 'use strict';
 
+const fireballSize = 24;
+const getFireballSpeed = function (movingLeft) {
+  return movingLeft ? 2 : 5;
+};
+const wizardSpeed = 2;
+const wizardWidth = 61;
+const getWizardHeight = function (width) {
+  return 1.377 * width;
+};
+const getWizardX = function (width) {
+  return width / 3;
+};
+const getWizardY = function (height) {
+  return height - 100;
+};
+
 window.GameConstants = {
   Fireball: {
-    size: fireballSize || 24,
-    speed: getFireballSpeed || function (movingLeft) {
-      return movingLeft ? 2 : 5;
-    }
+    size: fireballSize,
+    speed: getFireballSpeed
   },
   Wizard: {
-    speed: wizardSpeed || 2,
-    width: wizardWidth || 61,
-    getHeight: getWizardHeight || function (width) {
-      return 1.377 * width;
-    },
-    getX: getWizardX || function (width) {
-      return width / 3;
-    },
-    getY: getWizardY || function (height) {
-      return height - 100;
-    }
+    speed: wizardSpeed,
+    width: wizardWidth,
+    getHeight: getWizardHeight,
+    getX: getWizardX,
+    getY: getWizardY
   }
 };
 
